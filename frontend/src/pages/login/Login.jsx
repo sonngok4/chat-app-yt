@@ -11,26 +11,26 @@ export default function Login() {
                 <form action="">
                     <div>
                         <label htmlFor="email" className="label p-2">
-                            <span className="text-base label-text">Email</span>
+                            <span className="text-base label-text text-white">Email</span>
                         </label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             placeholder="Enter your email"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-300"
                             required />
                     </div>
                     <div>
                         <label htmlFor="password" className="label p-2">
-                            <span className="text-base label-text">Password</span>
+                            <span className="text-base label-text text-white">Password</span>
                         </label>
                         <input
                             type="password"
                             id="password"
                             name="password"
                             placeholder="Enter your password"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-300"
                             required />
                     </div>
                     <div>
@@ -45,7 +45,7 @@ export default function Login() {
                         Register
                     </a>
                     <div>
-                        <button className="btn btn-block btn-sm mt-2" type="submit">Login</button>
+                        <button className="btn btn-block btn-sm mt-2 hover:text-white" type="submit">Login</button>
                     </div>
                 </form>
             </div>

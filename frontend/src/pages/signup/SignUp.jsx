@@ -13,50 +13,50 @@ export default function SignUp() {
                 <form action="">
                     <div>
                         <label htmlFor="name" className="label p-2">
-                            <span className="text-base label-text">Full Name</span>
+                            <span className="text-base label-text text-white">Full Name</span>
                         </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             placeholder="Enter your full name"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-400"
                             required />
                     </div>
                     <div>
                         <label htmlFor="email" className="label p-2">
-                            <span className="text-base label-text">Email</span>
+                            <span className="text-base label-text text-white">Email</span>
                         </label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             placeholder="Enter your email"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-400"
                             required />
                     </div>
                     <div>
                         <label htmlFor="password" className="label p-2">
-                            <span className="text-base label-text">Password</span>
+                            <span className="text-base label-text text-white">Password</span>
                         </label>
                         <input
                             type="password"
                             id="password"
                             name="password"
                             placeholder="Enter your password"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-400"
                             required />
                     </div>
                     <div>
                         <label htmlFor="confirm-password" className="label p-2">
-                            <span className="text-base label-text">Confirm Password</span>
+                            <span className="text-base label-text text-white">Confirm Password</span>
                         </label>
                         <input
                             type="password"
                             id="confirm-password"
                             name="confirm-password"
                             placeholder="Enter your password"
-                            className="input input-bordered w-full h-10"
+                            className="input input-bordered w-full h-10 text-white bg-slate-500 bg-opacity-35 placeholder-gray-400"
                             required />
                     </div>
                     <div>
@@ -69,7 +69,7 @@ export default function SignUp() {
                         Login
                     </a>
                     <div>
-                        <button className="btn btn-block btn-sm mt-2" type="submit">SignUp</button>
+                        <button className="btn btn-block btn-sm mt-2 hover:text-white" type="submit">SignUp</button>
                     </div>
                 </form>
             </div>
