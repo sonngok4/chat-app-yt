@@ -1,17 +1,18 @@
-import Conversation from "./Conversation"
+import useGetConversationList from "../../hooks/useGetConversationList";
+import Conversation from "./Conversation";
 
 function ConversationList() {
+    const { loading, conversationList } = useGetConversationList();
+
     return (
         <div className="flex py-3 flex-col overflow-auto">
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
-            <Conversation />
+            {conversationList.map((conversation, index) => (
+                <Conversation
+                    key={conversation._id}
+                    conversation={conversation}
+                    lastIndex={index === conversationList.length - 1} />
+            ))}
+            {loading ? <span className="loading loading-spinner mx-auto"></span> : null}
         </div>
     )
 }

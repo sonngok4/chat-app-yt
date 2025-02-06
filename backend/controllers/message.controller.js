@@ -1,5 +1,6 @@
 import Conversation from '../models/conversation.model.js';
 import Message from '../models/message.model.js';
+import { getRecipientSocketId, io } from '../socket/socket.js';
 
 class messageController {
 	static async sendMessage(req, res) {
@@ -32,6 +33,16 @@ class messageController {
 			// await newMessage.save();
 
 			await Promise.all([conversation.save(), newMessage.save()]);
+
+			// SOCKET IO FUNCTIONALITY
+			const recipientSocketId = getRecipientSocketId(recipientId);
+			if (recipientSocketId) {
+				// io.to(<socketId>).emit()
+				// Emit the new message to the recipient's socket
+                io.to(recipientSocketId).emit('newMessage', newMessage);
+            } else {
+                console.log(`No active socket for user ${recipientId}`);
+            }
 
 			res.status(200).send(newMessage);
 		} catch (error) {

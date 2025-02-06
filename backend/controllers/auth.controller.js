@@ -81,13 +81,13 @@ class AuthController {
 
 			const user = await User.findOne({ email });
 			if (!user) {
-				return res.status(400).json({ error: 'Invalid credentials' });
+				return res.status(400).json({ error: 'User not found' });
 			}
 
 			const isMatch = await user.comparePassword(password);
 
 			if (!isMatch) {
-				return res.status(400).json({ error: 'Invalid credentials' });
+				return res.status(400).json({ error: 'Invalid credentials', });
 			}
 
 			// Generate jwt token
@@ -115,7 +115,9 @@ class AuthController {
 		try {
 			res.clearCookie('jwt', '', '');
 
-			res.status(200).json({ success: true });
+			res
+				.status(200)
+				.json({ success: true, message: 'Logged out successfully' });
 		} catch (error) {
 			console.log('Error in logout controller: ', error.message);
 			res.status(500).json({ error: 'Internal Server Error' });
