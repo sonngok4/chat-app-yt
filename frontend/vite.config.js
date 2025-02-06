@@ -8,7 +8,7 @@ export default defineConfig({
 		port: 3000,
 		proxy: {
 			'/api': {
-				target: 'https://chat-app-yt-eic6.onrender.com/',
+				target: 'https://chat-app-yt-eic6.onrender.com',
 				// changeOrigin: true,
 				// secure: false,
 				// rewrite: path => path.replace(/^\/api/, '')
